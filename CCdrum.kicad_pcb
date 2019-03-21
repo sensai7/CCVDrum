@@ -752,17 +752,7 @@
       (net 27 "Net-(J3-Pad5)"))
     (pad "" thru_hole circle (at 5.00126 6.9977 90) (size 2.49936 2.49936) (drill 1.397) (layers *.Cu *.Mask))
     (pad "" thru_hole circle (at -5.00126 6.9977 90) (size 2.49936 2.49936) (drill 1.397) (layers *.Cu *.Mask))
-    (model walter/conn_av/din-5.wrl
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
-    (model "D:/Users/gonya/Desktop/Jueves - Dynarmonium/cc drum/mod_conn_av/walter/conn_av/din-5.wrl"
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
-    (model ":italian footprints:3d_conn_av/walter/conn_av/din-5.wrl"
+    (model ":italian footprints:3d_conn_av/din-5.wrl"
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -800,12 +790,7 @@
       (net 1 GND))
     (pad "" thru_hole circle (at -4.8 0 180) (size 3.5 3.5) (drill 2.2) (layers *.Cu *.Mask F.SilkS))
     (pad "" thru_hole circle (at 4.8 0 180) (size 3.5 3.5) (drill 2.2) (layers *.Cu *.Mask F.SilkS))
-    (model "D:/Users/gonya/Desktop/Jueves - Dynarmonium/cc drum/mod_conn_av/walter/pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
-    (model ":italian footprints:3d_pth_resistors/walter/pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
+    (model ":italian footprints:3d_pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -843,12 +828,7 @@
       (net 17 GAN))
     (pad 1 thru_hole oval (at -2.5 7 180) (size 1.5 2) (drill 1) (layers *.Cu *.Mask F.SilkS)
       (net 7 +3V3))
-    (model "D:/Users/gonya/Desktop/Jueves - Dynarmonium/cc drum/mod_conn_av/walter/pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
-    (model ":italian footprints:3d_pth_resistors/walter/pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
+    (model ":italian footprints:3d_pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -886,17 +866,7 @@
       (net 1 GND))
     (pad "" thru_hole circle (at -4.8 0 180) (size 3.5 3.5) (drill 2.2) (layers *.Cu *.Mask F.SilkS))
     (pad "" thru_hole circle (at 4.8 0 180) (size 3.5 3.5) (drill 2.2) (layers *.Cu *.Mask F.SilkS))
-    (model walter/pth_resistors/trimmer_alps-rk09k1130ah1.wrl
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
-    (model "D:/Users/gonya/Desktop/Jueves - Dynarmonium/cc drum/mod_conn_av/walter/pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
-    (model ":italian footprints:3d_pth_resistors/walter/pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
+    (model ":italian footprints:3d_pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -934,12 +904,7 @@
       (net 16 FLD))
     (pad 1 thru_hole oval (at -2.5 7 180) (size 1.5 2) (drill 1) (layers *.Cu *.Mask F.SilkS)
       (net 7 +3V3))
-    (model "D:/Users/gonya/Desktop/Jueves - Dynarmonium/cc drum/mod_conn_av/walter/pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
-    (model ":italian footprints:3d_pth_resistors/walter/pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
+    (model ":italian footprints:3d_pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -977,12 +942,7 @@
       (net 1 GND))
     (pad "" thru_hole circle (at -4.8 0 180) (size 3.5 3.5) (drill 2.2) (layers *.Cu *.Mask F.SilkS))
     (pad "" thru_hole circle (at 4.8 0 180) (size 3.5 3.5) (drill 2.2) (layers *.Cu *.Mask F.SilkS))
-    (model "D:/Users/gonya/Desktop/Jueves - Dynarmonium/cc drum/mod_conn_av/walter/pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
-    (model ":italian footprints:3d_pth_resistors/walter/pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
+    (model ":italian footprints:3d_pth_resistors/trimmer_alps-rk09k1130ah1.wrl"
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1129,12 +1089,7 @@
       (net 1 GND))
     (pad 6 smd rect (at -2.32 -1.03 270) (size 1.15 1.45) (layers F.Cu F.Paste F.Mask)
       (net 1 GND))
-    (model ${KISYS3DMOD}/Connector_USB.3dshapes/USB_Micro-B_GCT_USB3076-30-A.wrl
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
-    (model "D:/Users/gonya/Desktop/Jueves - Dynarmonium/cc drum/mod_conn_av/walter/conn_pc/usb_B_micro_smd.wrl"
+    (model ":italian footprints:conn_pc/usb_B_micro_smd-2.wrl"
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1449,6 +1404,7 @@
   (gr_line (start 179.77 69.91) (end 179.77 109.91) (layer Edge.Cuts) (width 0.2) (tstamp 5C8B14C1))
   (gr_line (start 104.77 69.9) (end 179.77 69.9) (layer Edge.Cuts) (width 0.2))
 
+  (segment (start 119.08 86) (end 119.228 85.852) (width 0.25) (layer F.Cu) (net 0))
   (segment (start 108.43 87.72) (end 108.85 87.3) (width 0.25) (layer F.Cu) (net 1))
   (segment (start 108.43 88.32) (end 108.43 87.72) (width 0.25) (layer F.Cu) (net 1))
   (segment (start 128.2175 93.164) (end 125.73 90.6765) (width 0.25) (layer F.Cu) (net 2))
@@ -1488,7 +1444,6 @@
   (via (at 116.1 86) (size 0.8) (drill 0.4) (layers F.Cu B.Cu) (net 7))
   (segment (start 113.076 86) (end 112.928 85.852) (width 0.25) (layer F.Cu) (net 7))
   (segment (start 116.1 86) (end 113.076 86) (width 0.25) (layer F.Cu) (net 7))
-  (segment (start 119.08 86) (end 119.228 85.852) (width 0.25) (layer F.Cu) (net 0))
   (segment (start 141.229403 73.914) (end 136.906 78.237403) (width 0.25) (layer F.Cu) (net 8))
   (segment (start 155.114 73.914) (end 141.229403 73.914) (width 0.25) (layer F.Cu) (net 8))
   (segment (start 136.906 85.598) (end 135.636 86.868) (width 0.25) (layer F.Cu) (net 8))
