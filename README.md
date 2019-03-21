@@ -1,6 +1,8 @@
 # CCVDrum
 Energia code and Kicad files for a Korg Volca Drum MIDI CC board
 
+![Board](https://i.imgur.com/yiM4Lcg.jpg)
+
 In the Korg Volca Drum there's a hidden menu when you press the edit/step to 
 change five adittional settings for each part: bit resolution, overdrive, wave 
 folding, pan, and pre-amp gain.
@@ -17,14 +19,15 @@ The board has a 'JTAG' section to easily flash a new firmware or code mod.
 
 Useful links
 
-Korg Volca Drum official site: https://www.korg.com/us/products/dj/volca_drum/
-Energia Project site: http://energia.nu
+ * Korg Volca Drum official site: https://www.korg.com/us/products/dj/volca_drum/
+ * Energia Project site: http://energia.nu
+ * KiCad footprints and 3D models http://smisioto.no-ip.org/elettronica/kicad/kicad-en.htm
 
 Datasheets
 
-MSP430G2553 MIXED SIGNAL MICROCONTROLLER http://www.ti.com/lit/ds/symlink/msp430g2553.pdf
-AMS1117-3.3 1A LOW DROPOUT VOLTAGE REGULATOR http://www.advanced-monolithic.com/pdf/ds1117.pdf
-74AUP1G17 SINGLE SCHMITT-TRIGGER BUFFER https://www.diodes.com/assets/Datasheets/74AUP1G17.pdf
+ * MSP430G2553 MIXED SIGNAL MICROCONTROLLER http://www.ti.com/lit/ds/symlink/msp430g2553.pdf
+ * AMS1117-3.3 1A LOW DROPOUT VOLTAGE REGULATOR http://www.advanced-monolithic.com/pdf/ds1117.pdf
+ * 74AUP1G17 SINGLE SCHMITT-TRIGGER BUFFER https://www.diodes.com/assets/Datasheets/74AUP1G17.pdf
 
 TODO
 
