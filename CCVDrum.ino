@@ -1,3 +1,4 @@
+// Pin connections
 // Complete pinmap on http://energia.nu/pinmaps/img/LaunchPadMSP430G2452-v1.5.jpg
 #define POT_BIT 2
 #define LED_BIT 8
@@ -21,7 +22,7 @@ unsigned int readIndex = 0;
 unsigned int total[5] = {0, 0, 0, 0, 0};
 unsigned int average[5] = {0, 0, 0, 0, 0};
 unsigned int outputValue[5] = {0, 0, 0, 0, 0};
-unsigned int previousValue[5] = {0, 0, 0, 0,0};
+unsigned int previousValue[5] = {0, 0, 0, 0, 0};
 
 //timing variables
 unsigned long previousMillis = 0;
@@ -52,7 +53,7 @@ void loop(){
 	//Averaging and updating pot status
 	for (int i = 0; i < 5; ++i){
 		average[i] = total[i]/ numReadings;
-		outputValue[i] = floor(average[i] >> 2);
+		outputValue[i] = average[i] >> 2;
 		total[i] -= readings[i][readIndex];
 		readings[i][readIndex] = analogRead(analogPort[i]);
 		total[i] += readings[i][readIndex];
