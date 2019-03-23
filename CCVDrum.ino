@@ -52,7 +52,7 @@ void setup(){
 void loop(){
 	//Averaging and updating pot status
 	for (int i = 0; i < 5; ++i){
-		average[i] = total[i]/ numReadings;
+		average[i] = total[i] / numReadings;
 		outputValue[i] = average[i] >> 2;
 		total[i] -= readings[i][readIndex];
 		readings[i][readIndex] = analogRead(analogPort[i]);
@@ -60,7 +60,7 @@ void loop(){
 	}
 	(readIndex == numReadings - 1) ? readIndex = 0 : readIndex++;
 
-	// to be executed once every 1/interval seconds
+	// to be executed once every 'interval' miliseconds
 	unsigned long currentMillis = millis();
 	if(currentMillis - previousMillis > interval){	 
 		previousMillis = currentMillis;
