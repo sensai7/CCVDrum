@@ -31,6 +31,5 @@ Datasheets
 
 TODO
 
- * Add a Bill Of Materials txt
  * Change the midi CC numbers once the Midi implementation is available on 
  Korg's site. The current numbers are a placeholder.
