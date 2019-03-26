@@ -58,7 +58,7 @@ void loop(){
 		readings[i][readIndex] = analogRead(analogPort[i]);
 		total[i] += readings[i][readIndex];
 	}
-	(readIndex == numReadings - 1) ? readIndex = 0 : readIndex++;
+	readIndex = (readIndex + 1) % (numReadings - 1);
 
 	// to be executed once every 'interval' miliseconds
 	unsigned long currentMillis = millis();
