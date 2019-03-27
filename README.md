@@ -17,6 +17,12 @@ available to the Texas Instruments MCU ecosystem.
 
 The board has a 'JTAG' section to easily flash a new firmware or code mod.
 
+It's possible to select the MIDI channel by having the the DRV, FLD, PAN and 
+GAN potentiometers all the way down or up when the board is being powered up, 
+being the minimum value a '0' and the maximum value a '1', the combination of 
+these 4 "binary" values is the selected channel, being DRV the most 
+significant bit and GAN the least significant bit.
+
 Useful links
 
  * Korg Volca Drum official site: https://www.korg.com/us/products/dj/volca_drum/
@@ -33,3 +39,5 @@ TODO
 
  * Change the midi CC numbers once the Midi implementation is available on 
  Korg's site. The current numbers are a placeholder.
+  * Add small 8-4-2-1 to the potentiometer silkscreen to illustrate how to 
+  change MIDI channel.

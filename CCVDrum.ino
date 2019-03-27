@@ -23,6 +23,7 @@ unsigned int total[5] = {0, 0, 0, 0, 0};
 unsigned int average[5] = {0, 0, 0, 0, 0};
 unsigned int outputValue[5] = {0, 0, 0, 0, 0};
 unsigned int previousValue[5] = {0, 0, 0, 0, 0};
+unsigned int channel = 0;
 
 //timing variables
 unsigned long previousMillis = 0;
@@ -47,6 +48,13 @@ void setup(){
 		delay(50); //TODO lower as much as possible
 		digitalWrite(LED_ON, HIGH);
 	} 
+
+	//Channel selection // This section is horrible, needs a rework
+	if (total[1] % 1023 == 0 && total[2] % 1023 == 0 &&
+	total[3] % 1023 == 0 && total[4] % 1023 == 0){
+		channel = 8 * ((total[1]/numReadings)>>9) + 4 * ((total[2]/numReadings)>>9) +
+					2 * ((total[3]/numReadings)>>9) + ((total[3]/numReadings)>>9) - 1;
+	}
 }
 
 void loop(){
@@ -62,12 +70,12 @@ void loop(){
 
 	// to be executed once every 'interval' miliseconds
 	unsigned long currentMillis = millis();
-	if(currentMillis - previousMillis > interval){	 
+	if (currentMillis - previousMillis > interval){	 
 		previousMillis = currentMillis;
 		for (int i = 0; i < 5; ++i){
 			if (outputValue[i] != previousValue[i]){
 				digitalWrite(ledPort[i], HIGH);
-				Serial.write(0xB0); 
+				Serial.write(0xB0 + channel); 
 				Serial.write(CCValues[i]);
 				Serial.write(outputValue[i]);
 				previousValue[i] = outputValue[i];
