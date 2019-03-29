@@ -16,7 +16,7 @@
 const unsigned int numReadings = 10;
 const unsigned int analogPort[5] = {POT_BIT, POT_FLD, POT_DRV, POT_PAN, POT_GAN};
 const unsigned int ledPort[6] = {LED_BIT, LED_FLD, LED_DRV, LED_PAN, LED_GAN, LED_ON};
-const unsigned int CCValues[6] = {40, 41, 42, 43, 44}; //Complete Midi implementation on //NOWHERE YET TODO FOR KORG
+const unsigned int CCValues[6] = {40, 41, 42, 43, 44}; //Complete Midi implementation on https://www.korg.com/us/support/download/product/0/809/
 unsigned int readings[5][numReadings];
 unsigned int readIndex = 0;
 unsigned int total[5] = {0, 0, 0, 0, 0};

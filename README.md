@@ -37,7 +37,9 @@ Datasheets
 
 TODO
 
- * Change the midi CC numbers once the Midi implementation is available on 
- Korg's site. The current numbers are a placeholder.
-  * Add small 8-4-2-1 to the potentiometer silkscreen to illustrate how to 
-  change MIDI channel.
+ * The MIDI implementation is finally out and there are two modes available, a 
+ MIDI channel per part a la Volca Sample or a single channel for all. I'm 
+ still undecided about what path to choose first, but both are certainly 
+ possible  the addition of at least two pushbuttons, regrettably the LEDs will 
+ have to  be removed, as the GPIO pins are going to be necessary for a non 
+ aestethical feature.
