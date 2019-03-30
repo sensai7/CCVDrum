@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:CCdrum-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -196,7 +197,7 @@ Text GLabel 5050 2850 2    50   Input ~ 0
 DRV
 Text GLabel 5050 2750 2    50   Input ~ 0
 PAN
-Text GLabel 5050 2550 2    50   Input ~ 0
+Text GLabel 5050 2650 2    50   Input ~ 0
 GAN
 $Comp
 L Connector:USB_B_Micro J1
@@ -319,7 +320,7 @@ F 3 "" H 6700 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 6700 1800 1    50   Input ~ 0
-LED_BIT
+LED_P1
 $Comp
 L Device:LED D2
 U 1 1 5C784A00
@@ -354,7 +355,7 @@ F 3 "" H 7200 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7200 1800 1    50   Input ~ 0
-LED_FLD
+LED_P2
 $Comp
 L Device:LED D3
 U 1 1 5C784C60
@@ -389,7 +390,7 @@ F 3 "" H 7700 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7700 1800 1    50   Input ~ 0
-LED_DRV
+LED_P3
 $Comp
 L Device:LED D4
 U 1 1 5C784E7A
@@ -424,7 +425,7 @@ F 3 "" H 8200 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 8200 1800 1    50   Input ~ 0
-LED_PAN
+LED_P4
 $Comp
 L Device:LED D5
 U 1 1 5C785096
@@ -459,17 +460,17 @@ F 3 "" H 8700 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 8700 1800 1    50   Input ~ 0
-LED_GAN
-Text GLabel 2050 3150 0    50   Input ~ 0
-LED_BIT
-Text GLabel 2050 2950 0    50   Input ~ 0
-LED_FLD
-Text GLabel 2050 2850 0    50   Input ~ 0
-LED_DRV
-Text GLabel 2050 2750 0    50   Input ~ 0
-LED_PAN
+LED_P5
 Text GLabel 2050 3050 0    50   Input ~ 0
-LED_GAN
+LED_P5
+Text GLabel 2050 2850 0    50   Input ~ 0
+LED_P3
+Text GLabel 2050 2750 0    50   Input ~ 0
+LED_P2
+Text GLabel 2050 2650 0    50   Input ~ 0
+LED_P1
+Text GLabel 2050 2950 0    50   Input ~ 0
+LED_P4
 $Comp
 L Device:LED D6
 U 1 1 5C786192
@@ -504,9 +505,9 @@ F 3 "" H 9150 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 9150 1800 1    50   Input ~ 0
-LED_STATUS
-Text GLabel 2050 2650 0    50   Input ~ 0
-LED_STATUS
+LED_P6
+Text GLabel 2050 3150 0    50   Input ~ 0
+LED_P6
 Wire Wire Line
 	1300 3300 2050 3300
 $Comp
@@ -603,10 +604,10 @@ F 3 "" H 3800 1500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R8
+L Device:R R9
 U 1 1 5C78C804
 P 7450 4150
-F 0 "R8" H 7520 4196 50  0000 L CNN
+F 0 "R9" H 7520 4196 50  0000 L CNN
 F 1 "68" H 7520 4105 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 7380 4150 50  0001 C CNN
 F 3 "~" H 7450 4150 50  0001 C CNN
@@ -627,10 +628,10 @@ $EndComp
 Wire Wire Line
 	7450 4000 7450 3900
 $Comp
-L Device:R R9
+L Device:R R8
 U 1 1 5C78D68E
 P 8900 4300
-F 0 "R9" H 8970 4346 50  0000 L CNN
+F 0 "R8" H 8970 4346 50  0000 L CNN
 F 1 "68" H 8970 4255 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 8830 4300 50  0001 C CNN
 F 3 "~" H 8900 4300 50  0001 C CNN
@@ -752,4 +753,93 @@ Wire Wire Line
 Connection ~ 1300 3300
 Text GLabel 5750 3750 0    50   Input ~ 0
 RST
+$Comp
+L Switch:SW_Push SW2
+U 1 1 5C9F877A
+P 2500 6050
+F 0 "SW2" V 2546 6002 50  0000 R CNN
+F 1 "SW_Push" V 2455 6002 50  0000 R CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm_H4.3mm" H 2500 6250 50  0001 C CNN
+F 3 "" H 2500 6250 50  0001 C CNN
+	1    2500 6050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Switch:SW_Push SW1
+U 1 1 5C9F8BB9
+P 2500 5400
+F 0 "SW1" V 2546 5352 50  0000 R CNN
+F 1 "SW_Push" V 2455 5352 50  0000 R CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm_H4.3mm" H 2500 5600 50  0001 C CNN
+F 3 "" H 2500 5600 50  0001 C CNN
+	1    2500 5400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5C9FA3CB
+P 2500 6250
+F 0 "#PWR0105" H 2500 6000 50  0001 C CNN
+F 1 "GND" H 2505 6077 50  0000 C CNN
+F 2 "" H 2500 6250 50  0001 C CNN
+F 3 "" H 2500 6250 50  0001 C CNN
+	1    2500 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5C9FA54A
+P 2500 5600
+F 0 "#PWR0106" H 2500 5350 50  0001 C CNN
+F 1 "GND" H 2505 5427 50  0000 C CNN
+F 2 "" H 2500 5600 50  0001 C CNN
+F 3 "" H 2500 5600 50  0001 C CNN
+	1    2500 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5C9FB89C
+P 3850 5850
+F 0 "#PWR0107" H 3850 5600 50  0001 C CNN
+F 1 "GND" H 3855 5677 50  0000 C CNN
+F 2 "" H 3850 5850 50  0001 C CNN
+F 3 "" H 3850 5850 50  0001 C CNN
+	1    3850 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0108
+U 1 1 5C9FB8A2
+P 3850 5550
+F 0 "#PWR0108" H 3850 5400 50  0001 C CNN
+F 1 "+3.3V" H 3865 5723 50  0000 C CNN
+F 2 "" H 3850 5550 50  0001 C CNN
+F 3 "" H 3850 5550 50  0001 C CNN
+	1    3850 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_POT_US RV6
+U 1 1 5C9FB8A8
+P 3850 5700
+F 0 "RV6" H 3782 5746 50  0000 R CNN
+F 1 "10k" H 3782 5655 50  0000 R CNN
+F 2 "w_pth_resistors:trimmer_alps-rk09k1130ah1" H 3850 5700 50  0001 C CNN
+F 3 "~" H 3850 5700 50  0001 C CNN
+	1    3850 5700
+	1    0    0    -1  
+$EndComp
+Text GLabel 4000 5700 2    50   Input ~ 0
+PART
+Text GLabel 5050 2550 2    50   Input ~ 0
+PART
+Text GLabel 2750 5200 2    50   Input ~ 0
+PUSH_L1
+Wire Wire Line
+	2750 5200 2500 5200
+Text GLabel 2700 5850 2    50   Input ~ 0
+PUSH_L2
+Wire Wire Line
+	2700 5850 2500 5850
 $EndSCHEMATC
