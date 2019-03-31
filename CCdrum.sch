@@ -276,12 +276,12 @@ $EndComp
 $Comp
 L power:+3.3V #PWR018
 U 1 1 5C781EB9
-P 3600 2100
-F 0 "#PWR018" H 3600 1950 50  0001 C CNN
-F 1 "+3.3V" H 3615 2273 50  0000 C CNN
-F 2 "" H 3600 2100 50  0001 C CNN
-F 3 "" H 3600 2100 50  0001 C CNN
-	1    3600 2100
+P 3600 2050
+F 0 "#PWR018" H 3600 1900 50  0001 C CNN
+F 1 "+3.3V" H 3615 2223 50  0000 C CNN
+F 2 "" H 3600 2050 50  0001 C CNN
+F 3 "" H 3600 2050 50  0001 C CNN
+	1    3600 2050
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -508,8 +508,6 @@ Text GLabel 9150 1800 1    50   Input ~ 0
 LED_P6
 Text GLabel 2050 3150 0    50   Input ~ 0
 LED_P6
-Wire Wire Line
-	1300 3300 2050 3300
 $Comp
 L power:+5V #PWR013
 U 1 1 5C788193
@@ -746,11 +744,8 @@ Text GLabel 5750 3650 0    50   Input ~ 0
 TEST
 Wire Wire Line
 	1300 3300 1300 3150
-Text GLabel 1100 3300 0    50   Input ~ 0
+Text GLabel 1850 3550 3    50   Input ~ 0
 RST
-Wire Wire Line
-	1100 3300 1300 3300
-Connection ~ 1300 3300
 Text GLabel 5750 3750 0    50   Input ~ 0
 RST
 $Comp
@@ -850,4 +845,101 @@ Text GLabel 2050 2450 0    50   Input ~ 0
 PUSH_L1
 Text GLabel 2050 2550 0    50   Input ~ 0
 PUSH_L2
+$Comp
+L Device:R R10
+U 1 1 5CA092D9
+P 1500 3300
+F 0 "R10" H 1570 3346 50  0000 L CNN
+F 1 "1k" H 1570 3255 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 1430 3300 50  0001 C CNN
+F 3 "~" H 1500 3300 50  0001 C CNN
+	1    1500 3300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1350 3300 1300 3300
+Wire Wire Line
+	1650 3300 1850 3300
+Wire Wire Line
+	1850 3550 1850 3300
+Connection ~ 1850 3300
+Wire Wire Line
+	1850 3300 2050 3300
+$Comp
+L Device:C C3
+U 1 1 5CA0A90F
+P 1300 3600
+F 0 "C3" H 1415 3646 50  0000 L CNN
+F 1 "1n" H 1415 3555 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm" H 1338 3450 50  0001 C CNN
+F 3 "~" H 1300 3600 50  0001 C CNN
+	1    1300 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CA0AC3E
+P 1300 3750
+F 0 "#PWR?" H 1300 3500 50  0001 C CNN
+F 1 "GND" H 1305 3577 50  0000 C CNN
+F 2 "" H 1300 3750 50  0001 C CNN
+F 3 "" H 1300 3750 50  0001 C CNN
+	1    1300 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 3450 1300 3300
+Connection ~ 1300 3300
+Wire Wire Line
+	3600 2050 3600 2100
+Wire Wire Line
+	3600 2100 5450 2100
+Connection ~ 3600 2100
+$Comp
+L Device:C C4
+U 1 1 5CA0BB5F
+P 5450 2250
+F 0 "C4" H 5565 2296 50  0000 L CNN
+F 1 "10" H 5565 2205 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm" H 5488 2100 50  0001 C CNN
+F 3 "~" H 5450 2250 50  0001 C CNN
+	1    5450 2250
+	1    0    0    -1  
+$EndComp
+Connection ~ 5450 2100
+Wire Wire Line
+	5450 2100 5800 2100
+$Comp
+L Device:C C5
+U 1 1 5CA0BBF9
+P 5800 2250
+F 0 "C5" H 5915 2296 50  0000 L CNN
+F 1 "100" H 5915 2205 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm" H 5838 2100 50  0001 C CNN
+F 3 "~" H 5800 2250 50  0001 C CNN
+	1    5800 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CA0BC7E
+P 5450 2400
+F 0 "#PWR?" H 5450 2150 50  0001 C CNN
+F 1 "GND" H 5455 2227 50  0000 C CNN
+F 2 "" H 5450 2400 50  0001 C CNN
+F 3 "" H 5450 2400 50  0001 C CNN
+	1    5450 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CA0BCCF
+P 5800 2400
+F 0 "#PWR?" H 5800 2150 50  0001 C CNN
+F 1 "GND" H 5805 2227 50  0000 C CNN
+F 2 "" H 5800 2400 50  0001 C CNN
+F 3 "" H 5800 2400 50  0001 C CNN
+	1    5800 2400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
