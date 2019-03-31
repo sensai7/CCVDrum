@@ -1,7 +1,7 @@
 # CCVDrum
 Energia code and Kicad files for a Korg Volca Drum MIDI CC board
 
-![Board](https://i.imgur.com/yiM4Lcg.jpg)
+![Board](https://i.imgur.com/Zrqd26e.png)
 
 In the Korg Volca Drum there's a hidden menu when you press the edit/step to 
 change five adittional settings for each part: bit resolution, overdrive, wave 
@@ -21,7 +21,8 @@ It's possible to select the MIDI channel by having the the DRV, FLD, PAN and
 GAN potentiometers all the way down or up when the board is being powered up, 
 being the minimum value a '0' and the maximum value a '1', the combination of 
 these 4 "binary" values is the selected channel, being DRV the most 
-significant bit and GAN the least significant bit.
+significant bit and GAN the least significant bit. The Volca must be set in 
+Single Channel Mode.
 
 Useful links
 
@@ -37,9 +38,4 @@ Datasheets
 
 TODO
 
- * The MIDI implementation is finally out and there are two modes available, a 
- MIDI channel per part a la Volca Sample or a single channel for all. I'm 
- still undecided about what path to choose first, but both are certainly 
- possible  the addition of at least two pushbuttons, regrettably the LEDs will 
- have to  be removed, as the GPIO pins are going to be necessary for a non 
- aestethical feature.
+ * Code for the new board
