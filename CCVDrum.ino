@@ -1,29 +1,32 @@
 // Pin connections
 // Complete pinmap on http://energia.nu/pinmaps/img/LaunchPadMSP430G2452-v1.5.jpg
 #define POT_BIT 2
-#define LED_BIT 8
 #define POT_FLD 5
-#define LED_FLD 10
 #define POT_DRV 6
-#define LED_DRV 11
 #define POT_PAN 7
-#define LED_PAN 12
-#define POT_GAN 15
-#define LED_GAN 9
-#define LED_ON 13
+#define POT_GAN 14
+#define POT_PART 15
+#define LED_P1 13
+#define LED_P2 12
+#define LED_P3 11
+#define LED_P4 10
+#define LED_P5 9
+#define LED_P6 8
+#define PUSH_L1 18
+#define PUSH_L1 19
 
 //operation variables
 const unsigned int numReadings = 10;
-const unsigned int analogPort[5] = {POT_BIT, POT_FLD, POT_DRV, POT_PAN, POT_GAN};
-const unsigned int ledPort[6] = {LED_BIT, LED_FLD, LED_DRV, LED_PAN, LED_GAN, LED_ON};
-const unsigned int CCValues[6] = {40, 41, 42, 43, 44}; //Complete Midi implementation on https://www.korg.com/us/support/download/product/0/809/
-unsigned int readings[5][numReadings];
+const unsigned int potPort[6] = {POT_PART, POT_BIT, POT_FLD, POT_DRV, POT_PAN, POT_GAN};
+const unsigned int ledPort[6] = {LED_P1, LED_P2, LED_P3, LED_P4, LED_P5, LED_P6};
+const unsigned int CCValues[5] = {49, 50, 51, 10, 52}; //Complete Midi implementation on https://www.korg.com/us/support/download/product/0/809/
+unsigned int readings[6][numReadings];
 unsigned int readIndex = 0;
-unsigned int total[5] = {0, 0, 0, 0, 0};
-unsigned int average[5] = {0, 0, 0, 0, 0};
-unsigned int outputValue[5] = {0, 0, 0, 0, 0};
-unsigned int previousValue[5] = {0, 0, 0, 0, 0};
-unsigned int channel = 0;
+unsigned int total[6] = {0, 0, 0, 0, 0};
+unsigned int average[6] = {0, 0, 0, 0, 0};
+unsigned int outputValue[6] = {0, 0, 0, 0, 0};
+unsigned int previousValue[6] = {0, 0, 0, 0, 0};
+unsigned int part = 0;
 
 //timing variables
 unsigned long previousMillis = 0;
@@ -40,30 +43,23 @@ void setup(){
 
 	//Read pot initial status
 	for (int j = 0; j < numReadings; j++) {
-		for (int i = 0; i < 5; ++i){
-			readings[i][j] = analogRead(analogPort[i]);
+		for (int i = 0; i < 6; i++){
+			readings[i][j] = analogRead(potPort[i]);
 			total[i] += readings[i][j];
 		}
-		digitalWrite(LED_ON, LOW);
-		delay(50); //TODO lower as much as possible
-		digitalWrite(LED_ON, HIGH);
+		digitalWrite(LED_P6, LOW);
+		delay(1); //this should theoretically work
+		digitalWrite(LED_P6, HIGH);
 	} 
-
-	//Channel selection // This section is horrible, needs a rework
-	if (total[1] % 1023 == 0 && total[2] % 1023 == 0 &&
-	total[3] % 1023 == 0 && total[4] % 1023 == 0){
-		channel = 8 * ((total[1]/numReadings)>>9) + 4 * ((total[2]/numReadings)>>9) +
-					2 * ((total[3]/numReadings)>>9) + ((total[3]/numReadings)>>9) - 1;
-	}
 }
 
 void loop(){
 	//Averaging and updating pot status
-	for (int i = 0; i < 5; ++i){
+	for (int i = 0; i < 6; i++){
 		average[i] = total[i] / numReadings;
 		outputValue[i] = average[i] >> 2;
 		total[i] -= readings[i][readIndex];
-		readings[i][readIndex] = analogRead(analogPort[i]);
+		readings[i][readIndex] = analogRead(potPort[i]);
 		total[i] += readings[i][readIndex];
 	}
 	readIndex = (readIndex + 1) % (numReadings - 1);
@@ -72,15 +68,20 @@ void loop(){
 	unsigned long currentMillis = millis();
 	if (currentMillis - previousMillis > interval){	 
 		previousMillis = currentMillis;
-		for (int i = 0; i < 5; ++i){
+		part = outputValue[0] / 170;
+		for (int i = 1; i < 6; i++){
 			if (outputValue[i] != previousValue[i]){
 				digitalWrite(ledPort[i], HIGH);
-				Serial.write(0xB0 + channel); 
+				Serial.write(0xB0 + part); 
 				Serial.write(CCValues[i]);
 				Serial.write(outputValue[i]);
 				previousValue[i] = outputValue[i];
 				digitalWrite(ledPort[i], LOW);
 			}
 		}
+		for (int i = 0; i < 6; i++){
+			digitalWrite(ledPort[i], LOW);
+		}
+		digitalWrite(ledPort[part], HIGH);
 	} 
 }

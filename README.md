@@ -17,12 +17,7 @@ available to the Texas Instruments MCU ecosystem.
 
 The board has a 'JTAG' section to easily flash a new firmware or code mod.
 
-It's possible to select the MIDI channel by having the the DRV, FLD, PAN and 
-GAN potentiometers all the way down or up when the board is being powered up, 
-being the minimum value a '0' and the maximum value a '1', the combination of 
-these 4 "binary" values is the selected channel, being DRV the most 
-significant bit and GAN the least significant bit. The Volca must be set in 
-Single Channel Mode.
+The Volca must be set in Split Channel Mode.
 
 Useful links
 
@@ -38,4 +33,4 @@ Datasheets
 
 TODO
 
- * Code for the new board
+ * Add button functionality to the code. Part change or maybe other things
