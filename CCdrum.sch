@@ -837,10 +837,6 @@ Text GLabel 2700 5850 2    50   Input ~ 0
 PUSH_L2
 Wire Wire Line
 	2700 5850 2500 5850
-Text Notes 1700 6700 0    50   ~ 0
-To allow one-hand part modifications these should be single push and not hold to change layer mode 1/2/1+2
-Text Notes 1500 6900 0    50   ~ 0
-they need some sort of visual feedback on the leds
 Text GLabel 2050 2450 0    50   Input ~ 0
 PUSH_L1
 Text GLabel 2050 2550 0    50   Input ~ 0
