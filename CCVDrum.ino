@@ -43,13 +43,13 @@ void setup(){
 
 	//Read pot initial status
 	for (int j = 0; j < numReadings; j++) {
+		digitalWrite(LED_P6, HIGH);
 		for (int i = 0; i < 6; i++){
 			readings[i][j] = analogRead(potPort[i]);
 			total[i] += readings[i][j];
 		}
-		digitalWrite(LED_P6, LOW);
 		delay(1); //this should theoretically work
-		digitalWrite(LED_P6, HIGH);
+		digitalWrite(LED_P6, LOW);
 	} 
 }
 
@@ -62,26 +62,31 @@ void loop(){
 		readings[i][readIndex] = analogRead(potPort[i]);
 		total[i] += readings[i][readIndex];
 	}
-	readIndex = (readIndex + 1) % (numReadings - 1);
+	readIndex = (readIndex + 1) % (numReadings);
+
+	//Buttons
 
 	// to be executed once every 'interval' miliseconds
 	unsigned long currentMillis = millis();
 	if (currentMillis - previousMillis > interval){	 
 		previousMillis = currentMillis;
-		part = outputValue[0] / 170;
+		part = (outputValue[0] + 22) / 43 - 1; // 0-255 to 0-5 in even steps map() doesn't work as it should
 		for (int i = 1; i < 6; i++){
 			if (outputValue[i] != previousValue[i]){
 				digitalWrite(ledPort[i], HIGH);
 				Serial.write(0xB0 + part); 
-				Serial.write(CCValues[i]);
+				Serial.write(CCValues[i - 1]);
 				Serial.write(outputValue[i]);
 				previousValue[i] = outputValue[i];
 				digitalWrite(ledPort[i], LOW);
 			}
 		}
 		for (int i = 0; i < 6; i++){
-			digitalWrite(ledPort[i], LOW);
+			if (i != part){
+				digitalWrite(ledPort[i], LOW);
+			}
 		}
 		digitalWrite(ledPort[part], HIGH);
+		
 	} 
 }
