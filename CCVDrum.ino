@@ -20,7 +20,7 @@ const unsigned int numReadings = 10;
 const unsigned int potPort[6] = {POT_PART, POT_BIT, POT_FLD, POT_DRV, POT_PAN, POT_GAN};
 const unsigned int ledPort[6] = {LED_P1, LED_P2, LED_P3, LED_P4, LED_P5, LED_P6};
 const unsigned int pushPort[2] = {PUSH_L1, PUSH_L2};
-const unsigned int CCValues[5] = {49, 50, 51, 10, 52}; //Complete Midi implementation on https://www.korg.com/us/support/download/product/0/809/
+const unsigned int CCValues[5] = {49, 50, 51, 10, 52}; //BIT, FLD, DRV, PAN, GAN //Complete Midi implementation on https://www.korg.com/us/support/download/product/0/809/
 unsigned int readings[6][numReadings];
 unsigned int readIndex = 0;
 unsigned int total[6] = {0, 0, 0, 0, 0};
@@ -28,9 +28,10 @@ unsigned int average[6] = {0, 0, 0, 0, 0};
 unsigned int outputValue[6] = {0, 0, 0, 0, 0};
 unsigned int previousValue[6] = {0, 0, 0, 0, 0};
 unsigned int part = 0;
-
-bool push[2] = {0, 0};
-bool previousPush[2] = {0, 0};
+unsigned int layer = 0;
+bool push[2] = {1, 1};
+bool previousPush[2] = {1, 1};
+bool pushFlag = 0;
 
 //timing variables
 unsigned long previousMillis = 0;
@@ -89,20 +90,57 @@ void loop(){
 				digitalWrite(ledPort[i], LOW);
 			}
 		}
-		for (int i = 0; i < 6; i++){
-			if (i != part){
-				digitalWrite(ledPort[i], LOW);
-			}
-		}
-		digitalWrite(ledPort[part], HIGH);
 
 		//Buttons
 		for (int i = 0; i < 2; ++i){
 			previousPush[i] = push[i];
 			push[i] = digitalRead(pushPort[i]);
-			if (push[i] == 1 && previousPush[i] == 0){
-				//stuff
+		}
+		if (!push[0] && !push[1]){
+			pushFlag = 1;
+		}
+		if (!pushFlag){ //only one button
+			if (push[0] && !previousPush[0]){
+				Serial.write(0xB0 + part);
+				Serial.write(14);
+				Serial.write(0xff);
+			}
+			if (push[1] && !previousPush[1]){
+				Serial.write(0xB0 + part);
+				Serial.write(15);
+				Serial.write(0xff);
 			}
 		}
+		else{ // both buttons
+			if(push[0] | push[1] == 0){
+				pushFlag = 0;
+				Serial.write(0xB0 + part);
+				Serial.write(16);
+				Serial.write(0xff);
+			}
+		}
+
+		//LEDs
+		if (!push[0] | !push[1]){
+			if(!push[0] | pushFlag){
+				digitalWrite(ledPort[0], HIGH);
+				digitalWrite(ledPort[1], HIGH);
+				digitalWrite(ledPort[2], HIGH);
+			}
+			if (!push[1] | pushFlag){
+				digitalWrite(ledPort[3], HIGH);
+				digitalWrite(ledPort[4], HIGH);
+				digitalWrite(ledPort[5], HIGH);
+			}
+		}
+		else{
+			for (int i = 0; i < 6; i++){
+				if (i != part){
+					digitalWrite(ledPort[i], LOW);
+				}
+			}
+			digitalWrite(ledPort[part], HIGH);
+		}
+
 	} 
 }
