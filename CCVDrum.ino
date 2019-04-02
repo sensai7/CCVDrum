@@ -13,12 +13,13 @@
 #define LED_P5 9
 #define LED_P6 8
 #define PUSH_L1 18
-#define PUSH_L1 19
+#define PUSH_L2 19
 
 //operation variables
 const unsigned int numReadings = 10;
 const unsigned int potPort[6] = {POT_PART, POT_BIT, POT_FLD, POT_DRV, POT_PAN, POT_GAN};
 const unsigned int ledPort[6] = {LED_P1, LED_P2, LED_P3, LED_P4, LED_P5, LED_P6};
+const unsigned int pushPort[2] = {PUSH_L1, PUSH_L2};
 const unsigned int CCValues[5] = {49, 50, 51, 10, 52}; //Complete Midi implementation on https://www.korg.com/us/support/download/product/0/809/
 unsigned int readings[6][numReadings];
 unsigned int readIndex = 0;
@@ -27,6 +28,9 @@ unsigned int average[6] = {0, 0, 0, 0, 0};
 unsigned int outputValue[6] = {0, 0, 0, 0, 0};
 unsigned int previousValue[6] = {0, 0, 0, 0, 0};
 unsigned int part = 0;
+
+bool push[2] = {0, 0};
+bool previousPush[2] = {0, 0};
 
 //timing variables
 unsigned long previousMillis = 0;
@@ -51,6 +55,10 @@ void setup(){
 		delay(1); //this should theoretically work
 		digitalWrite(LED_P6, LOW);
 	} 
+
+	//Setup buttons
+	pinMode(PUSH_L1, INPUT_PULLUP);
+	pinMode(PUSH_L2, INPUT_PULLUP);
 }
 
 void loop(){
@@ -64,12 +72,12 @@ void loop(){
 	}
 	readIndex = (readIndex + 1) % (numReadings);
 
-	//Buttons
-
 	// to be executed once every 'interval' miliseconds
 	unsigned long currentMillis = millis();
 	if (currentMillis - previousMillis > interval){	 
 		previousMillis = currentMillis;
+
+		//pots
 		part = (outputValue[0] + 22) / 43 - 1; // 0-255 to 0-5 in even steps map() doesn't work as it should
 		for (int i = 1; i < 6; i++){
 			if (outputValue[i] != previousValue[i]){
@@ -87,6 +95,14 @@ void loop(){
 			}
 		}
 		digitalWrite(ledPort[part], HIGH);
-		
+
+		//Buttons
+		for (int i = 0; i < 2; ++i){
+			previousPush[i] = push[i];
+			push[i] = digitalRead(pushPort[i]);
+			if (push[i] == 1 && previousPush[i] == 0){
+				//stuff
+			}
+		}
 	} 
 }
