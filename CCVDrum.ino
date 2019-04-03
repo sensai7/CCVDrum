@@ -58,6 +58,8 @@ void setup(){
 	} 
 
 	//Setup buttons
+	P2SEL = 0;
+	P2DIR = BIT6+BIT7; //setup XIN and XOUT as digital outputs
 	pinMode(PUSH_L1, INPUT_PULLUP);
 	pinMode(PUSH_L2, INPUT_PULLUP);
 }
