@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 48)
+    (drawings 52)
     (tracks 261)
     (zones 0)
     (modules 39)
@@ -328,6 +328,11 @@
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
+    (model ":italian footprints:3d_conn_av/din-5.wrl"
+      (at (xyz 0 0 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
+    )
   )
 
   (module SensaiLib:din-5 (layer F.Cu) (tedit 5CAB8A1E) (tstamp 5CB8431B)
@@ -375,6 +380,11 @@
     (pad 3 thru_hole circle (at -7.49808 -2.9972 180) (size 2.49936 2.49936) (drill 1.397) (layers *.Cu *.SilkS *.Mask)
       (net 27 "Net-(J5-Pad3)"))
     (model walter/conn_av/din-5.wrl
+      (at (xyz 0 0 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
+    )
+    (model ":italian footprints:3d_conn_av/din-5.wrl"
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -520,6 +530,11 @@
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
+    )
+    (model ${KISYS3DMOD}/Connector_BarrelJack.3dshapes/BarrelJack_CUI_PJ-063AH_Horizontal.step
+      (at (xyz 0 0 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 90))
     )
   )
 
@@ -1862,6 +1877,10 @@
     )
   )
 
+  (gr_circle (center 38 112.2) (end 40 112.126029) (layer F.Mask) (width 1) (tstamp 5CB47DA3))
+  (gr_circle (center 38 150.1) (end 40 150.026029) (layer F.Mask) (width 1) (tstamp 5CB47DAB))
+  (gr_circle (center 137.8 150.098633) (end 139.8 150.024662) (layer F.Mask) (width 1) (tstamp 5CB47DA3))
+  (gr_circle (center 137.8 112.173971) (end 139.8 112.1) (layer F.Mask) (width 1))
   (gr_arc (start 137.3 107.5) (end 135.7 107.5) (angle -90) (layer Edge.Cuts) (width 0.2) (tstamp 5CB3B153))
   (gr_arc (start 36.5 151.6) (end 34.9 151.6) (angle -90) (layer Edge.Cuts) (width 0.2) (tstamp 5CB3B153))
   (gr_arc (start 38.5 154.8) (end 40.1 154.8) (angle -90) (layer Edge.Cuts) (width 0.2) (tstamp 5CB3B153))
@@ -1953,7 +1972,7 @@
 
   (via (at 137.8 150.1) (size 5) (drill 3) (layers F.Cu B.Cu) (net 1) (tstamp 5CB38550))
   (via (at 137.8 112.2) (size 5) (drill 3) (layers F.Cu B.Cu) (net 1) (tstamp 5CB38541))
-  (via (at 38 150.1) (size 5) (drill 3) (layers F.Cu B.Cu) (net 1) (tstamp 5CAACA64))
+  (via (at 38 150.1) (size 5) (drill 3) (layers F.Cu B.Cu) (net 1) (tstamp 5CB47DB0))
   (via (at 38 112.2) (size 5) (drill 3) (layers F.Cu B.Cu) (net 1))
   (segment (start 70.265001 129.794999) (end 70.265001 122.6) (width 0.25) (layer B.Cu) (net 2))
   (segment (start 62.76 137.3) (end 70.265001 129.794999) (width 0.25) (layer B.Cu) (net 2))
