@@ -567,27 +567,14 @@ $EndComp
 $Comp
 L Device:R R2
 U 1 1 5C78C804
-P 6650 3900
-F 0 "R2" H 6720 3946 50  0000 L CNN
-F 1 "68" H 6720 3855 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 6580 3900 50  0001 C CNN
-F 3 "~" H 6650 3900 50  0001 C CNN
-	1    6650 3900
+P 6650 3450
+F 0 "R2" H 6720 3496 50  0000 L CNN
+F 1 "68" H 6720 3405 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 6580 3450 50  0001 C CNN
+F 3 "~" H 6650 3450 50  0001 C CNN
+	1    6650 3450
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR0126
-U 1 1 5C78CCC7
-P 6650 4050
-F 0 "#PWR0126" H 6650 3800 50  0001 C CNN
-F 1 "GND" H 6655 3877 50  0000 C CNN
-F 2 "" H 6650 4050 50  0001 C CNN
-F 3 "" H 6650 4050 50  0001 C CNN
-	1    6650 4050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6650 3750 6650 3650
 $Comp
 L Device:R R8
 U 1 1 5C78D68E
@@ -614,8 +601,6 @@ F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 7250 3750 50  0001
 	1    7250 3750
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6950 3650 6650 3650
 Wire Wire Line
 	8400 3650 8400 3900
 $Comp
@@ -1047,4 +1032,21 @@ F 3 "" H 9600 4600 50  0001 C CNN
 	1    9600 4600
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	6650 3600 6650 3650
+Wire Wire Line
+	6650 3650 6950 3650
+$Comp
+L power:+3.3V #PWR0126
+U 1 1 5CBCC0F1
+P 6650 3250
+F 0 "#PWR0126" H 6650 3100 50  0001 C CNN
+F 1 "+3.3V" H 6665 3423 50  0000 C CNN
+F 2 "" H 6650 3250 50  0001 C CNN
+F 3 "" H 6650 3250 50  0001 C CNN
+	1    6650 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 3250 6650 3300
 $EndSCHEMATC
