@@ -16,11 +16,20 @@ Texas Instruments, and it's coded in Energia, an Arduino port for TI
 processors, bringing the simplicity of the Wiring language and the huge 
 Arduino community projects available to the Texas Instruments MCU ecosystem.
 
+Some features:
+
+* The board is designed to fit inside a 1590B enclosure, a really common 
+and cheap enclosure model for guitar pedals.
+* The power plug is a 2.1mm barrel jack and with the current Voltage Regulator 
+model, Voltages from 5V to 20V are fine.
+* There's a optional MIDI input to use as MIDI thru if you need to chain your 
+devices.
+
+The Volca must be [up to date](https://www.korg.com/us/support/download/product/0/809/#software), or at least in version 1.11 which changed a critical bug on the MIDI implementation (BIT knob won't work and the others would be changed). It must also be set in Split Channel Mode, the CC messages needed (BIT, DRV,... etc) are not available in the Single Channel Mode. My unit came with Split mode by default, but to check and change it, turn it on while holding ●RECORD, then press one of the channels to select it, then press it again to change it to channels 1-6. Press the ●RECORD button again when your unit's screen shows [MID 1--6](https://i.imgur.com/e5hpA2r.jpg).
+
 The easiest way to flash a different firmware would be owning a MSP430G2 
 (MSP-EXP430G2) launchpad, or the newer MSP430G2ET (MSP-EXP430G2ET) LaunchPad, 
 place your MCU in the LaunchPad socket and flash the new code using Energia. 
-
-The Volca must be [up to date](https://www.korg.com/us/support/download/product/0/809/#software), or at least in version 1.11 which changed a critical bug on the MIDI implementation (BIT knob won't work and the others would be changed). It must also be set in Split Channel Mode, the CC messages needed (BIT, DRV,... etc) are not available in the Single Channel Mode. My unit came with Split mode by default, but to check and change it, turn it on while holding ●RECORD, then press one of the channels to select it, then press it again to change it to channels 1-6. Press the ●RECORD button again when your unit's screen shows [MID 1--6](https://i.imgur.com/e5hpA2r.jpg)
 
 Useful links
 
