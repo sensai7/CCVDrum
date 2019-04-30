@@ -1,7 +1,7 @@
 # CCVDrum
 Energia code and Kicad files for a Korg Volca Drum MIDI CC board
 
-![Board](https://i.imgur.com/Zrqd26e.png)
+![Board](https://i.imgur.com/UoVhIPl.png)
 
 In the Korg Volca Drum there's a hidden menu when you press the edit/step to 
 change five adittional settings for each part and layer: bit resolution, 
@@ -19,14 +19,8 @@ Arduino community projects available to the Texas Instruments MCU ecosystem.
 The easiest way to flash a different firmware would be owning a MSP430G2 
 (MSP-EXP430G2) launchpad, or the newer MSP430G2ET (MSP-EXP430G2ET) LaunchPad, 
 place your MCU in the LaunchPad socket and flash the new code using Energia. 
-But if for any reason you want to flash the MCU on-board, the PCB has a 'JTAG' 
-section to easily flash a new firmware or code mod. For doing so, I suggest 
-following the tutorial [here](http://www.kerrywong.com/2012/04/02/using-msp430-launchpad-as-programmer/).
 
-The Volca must be set in Split Channel Mode. The CC messages needed (BIT, 
-DRV,... etc) are not available in the Single Channel Mode. To set your Volca 
-Drum on Split Channel Mode turn it on while holding MEMORY, press one of the 
-channels to select it, then press it again to change it to channels 1-6.
+The Volca must be [up to date](https://www.korg.com/us/support/download/product/0/809/#software), or at least in version 1.11 which changed a critical bug on the MIDI implementation (BIT knob won't work and the others would be changed). It must also be set in Split Channel Mode, the CC messages needed (BIT, DRV,... etc) are not available in the Single Channel Mode. My unit came with Split mode by default, but to check and change it, turn it on while holding ●RECORD, then press one of the channels to select it, then press it again to change it to channels 1-6. Press the ●RECORD button again when your unit's screen shows [MID 1--6](https://i.imgur.com/e5hpA2r.jpg)
 
 Useful links
 
@@ -36,10 +30,15 @@ Useful links
 
 Datasheets
 
- * MSP430G2553 MIXED SIGNAL MICROCONTROLLER http://www.ti.com/lit/ds/symlink/msp430g2553.pdf
+ * MSP430G2553 Mixed Signal Microcontroller http://www.ti.com/lit/ds/symlink/msp430g2553.pdf
+ * 6N139 High Speed Optocoupler https://www.vishay.com/docs/83605/6n139.pdf
+ * 74HC14 Hex inverting Schmitt trigger https://assets.nexperia.com/documents/data-sheet/74HC_HCT14.pdf
+ * LM1117IMP-3.3 LDO Voltage Regulator http://www.ti.com/lit/ds/symlink/lm1117.pdf
+ 
+ (Only in older versions):
  * AMS1117-3.3 1A LOW DROPOUT VOLTAGE REGULATOR http://www.advanced-monolithic.com/pdf/ds1117.pdf
  * 74AUP1G17 SINGLE SCHMITT-TRIGGER BUFFER https://www.diodes.com/assets/Datasheets/74AUP1G17.pdf
 
 TODO
 
- * Testing.
+ * Fix minor bugs
